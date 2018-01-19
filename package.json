@@ -1,0 +1,22 @@
+{
+  "name": "handy-tools",
+  "version": "0.1.0",
+  "description": "A small library of handy tools",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plemiszki/handy-tools.git"
+  },
+  "author": "Peter Lemiszki <plemiszki@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plemiszki/handy-tools/issues"
+  },
+  "homepage": "https://github.com/plemiszki/handy-tools#readme"
+}
