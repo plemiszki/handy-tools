@@ -24,6 +24,14 @@ module.exports = {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
 
+  ellipsis: function(string, n) {
+  	if (string.length > n) {
+      return string.slice(0, n) + "...";
+    } else {
+      return string;
+    }
+  };
+
   pluralize: function(string, n) {
     if (n === 1) {
       return this;
