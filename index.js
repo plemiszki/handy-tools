@@ -30,7 +30,7 @@ module.exports = {
     } else {
       return string;
     }
-  };
+  },
 
   pluralize: function(string, n) {
     if (n === 1) {
