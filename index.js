@@ -1,12 +1,16 @@
 'use strict';
 
 /**
- * Adds commas to a number
- * @param {number} number
- * @param {string} locale
- * @return {string}
+ * @return {object}
  */
- 
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
+
+module.exports = {
+
+  removeFromArray: function(array, element) {
+    var index = array.indexOf(element);
+    if (index >= 0) {
+      array.splice(index, 1);
+    }
+    return array;
+  }
 };
