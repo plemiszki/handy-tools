@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/plemiszki/handy-tools/issues"
   },
-  "homepage": "https://github.com/plemiszki/handy-tools#readme"
+  "homepage": "https://github.com/plemiszki/handy-tools#readme",
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
 }
