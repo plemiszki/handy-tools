@@ -66,7 +66,7 @@ module.exports = {
     };
     if (shouldIRender) {
       return(
-        <div className="grayed-out" style={ grayedOutStyle }></div>
+        React.createElement("div", {className: "grayed-out", style:  grayedOutStyle })
       );
     }
   },
@@ -87,7 +87,7 @@ module.exports = {
     };
     if (shouldIRender) {
       return(
-        <div className="spinner" style={ spinnerStyle }></div>
+        React.createElement("div", {className: "spinner", style:  spinnerStyle })
       );
     }
   },
