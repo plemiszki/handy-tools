@@ -52,6 +52,46 @@ module.exports = {
     return array;
   },
 
+  renderGrayedOut: function(shouldIRender, marginTop, marginLeft, borderRadius) {
+    var grayedOutStyle = {
+      position: 'absolute',
+      zIndex: 100,
+      backgroundColor: 'gray',
+      opacity: 0.1,
+      width: '100%',
+      height: '100%',
+      borderRadius: borderRadius || 0,
+      marginTop: marginTop || 0,
+      marginLeft: marginLeft || 0
+    };
+    if (shouldIRender) {
+      return(
+        <div className="grayed-out" style={ grayedOutStyle }></div>
+      );
+    }
+  },
+
+  renderSpinner: function(shouldIRender, spinnerSize) {
+    spinnerSize = spinnerSize || 90;
+    var spinnerStyle = {
+      position: 'absolute',
+      backgroundImage: 'url(' + Images.spinner + ')',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      opacity: 0.75,
+      zIndex: 101,
+      width: spinnerSize,
+      height: spinnerSize,
+      left: 'calc(50% - ' + (spinnerSize / 2) + 'px)',
+      top: 'calc(50% - ' + (spinnerSize / 2) + 'px)'
+    };
+    if (shouldIRender) {
+      return(
+        <div className="spinner" style={ spinnerStyle }></div>
+      );
+    }
+  },
+
   sortArrayOfDateStrings: function(array, property) {
     return array.sort(function(a, b) {
       if (+moment(a[property]).format('x') < +moment(b[property]).format('x')) {
