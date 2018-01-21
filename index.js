@@ -53,6 +53,10 @@ module.exports = {
     return array;
   },
 
+  renderInactiveButtonClass: function(condition) {
+    return condition ? " inactive" : "";
+  },
+
   renderGrayedOut: function(shouldIRender, marginTop, marginLeft, borderRadius) {
     var grayedOutStyle = {
       position: 'absolute',
