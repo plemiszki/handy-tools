@@ -33,6 +33,19 @@ module.exports = {
     }
   },
 
+  params: function() {
+    var result = {};
+    var urlParamString = window.location.search.substring(1);
+    if (urlParamString) {
+      var urlParams = urlParamString.split('&');
+      urlParams.forEach(function(param) {
+        var paramKeyValuePair = param.split('=');
+        result[paramKeyValuePair[0]] = paramKeyValuePair[1];
+      });
+    }
+    return result;
+  },
+
   pluralize: function(string, n) {
     if (n === 1) {
       return this;
