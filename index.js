@@ -111,7 +111,11 @@ module.exports = {
   },
 
   stringifyDate: function(date) {
-    return (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear().toString().slice(-2);
+    return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear().toString().slice(-2);
+  },
+
+  stringifyDateWithHyphens: function(date) {
+    return date.getFullYear().toString() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
   },
 
   sortArrayOfDateStrings: function(array, property) {
