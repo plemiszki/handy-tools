@@ -40,7 +40,18 @@ module.exports = {
       var urlParams = urlParamString.split('&');
       urlParams.forEach(function(param) {
         var paramKeyValuePair = param.split('=');
-        result[paramKeyValuePair[0]] = paramKeyValuePair[1];
+        var key = paramKeyValuePair[0];
+        var value = paramKeyValuePair[1];
+        var isArray = (key.slice(-2) === '[]');
+        if (isArray) {
+          if (result[key]) {
+            result[key].push(value);
+          } else {
+            result[key] = [value];
+          }
+        } else {
+          result[key] = value;
+        }
       });
     }
     return result;
