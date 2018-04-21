@@ -25,6 +25,37 @@ module.exports = {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
 
+  changeField: function(changeFieldArgs, event) {
+    var key = event.target.dataset.field;
+    var entity = event.target.dataset.entity;
+    var saveKey;
+    var saveValue;
+
+    if (entity) {
+      var newEntity = this.state[entity];
+      newEntity[key] = event.target.value;
+      saveKey = entity;
+      saveValue = newEntity;
+    } else {
+      saveKey = key;
+      saveValue = event.target.value;
+    }
+
+    // Common.removeFieldError(changeFieldArgs.errorsArray, key);
+
+    this.setState({
+      [saveKey]: saveValue,
+      justSaved: false
+    }, function() {
+      if (changeFieldArgs.changesFunction) {
+        var changesToSave = changeFieldArgs.changesFunction.call();
+        this.setState({
+          changesToSave: changesToSave
+        });
+      }
+    });
+  },
+
   deepCopy: function(obj) {
     if (typeof obj == 'object') {
       if (Array.isArray(obj)) {
@@ -52,6 +83,16 @@ module.exports = {
     } else {
       return string;
     }
+  },
+
+  errorClass: function(stateErrors, fieldErrors) {
+    var i;
+    for (i = 0; i < fieldErrors.length; i++) {
+      if (stateErrors.indexOf(fieldErrors[i]) > -1) {
+        return 'error';
+      }
+    }
+    return '';
   },
 
   filterArrayOfDateStrings: function(array, property, obj) {
@@ -122,6 +163,10 @@ module.exports = {
 
   renderInactiveButtonClass: function(condition) {
     return condition ? " inactive" : "";
+  },
+
+  renderDisabledButtonClass: function(condition) {
+    return condition ? " disabled" : "";
   },
 
   renderGrayedOut: function(shouldIRender, marginTop, marginLeft, borderRadius) {
