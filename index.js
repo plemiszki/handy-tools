@@ -25,6 +25,27 @@ module.exports = {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
 
+  deepCopy: function(obj) {
+    if (typeof obj == 'object') {
+      if (Array.isArray(obj)) {
+        var l = obj.length;
+        var r = new Array(l);
+        for (var i = 0; i < l; i++) {
+          r[i] = this.deepCopy(obj[i]);
+        }
+        return r;
+      } else {
+        var r = {};
+        r.prototype = obj.prototype;
+        for (var k in obj) {
+          r[k] = this.deepCopy(obj[k]);
+        }
+        return r;
+      }
+    }
+    return obj;
+  },
+
   ellipsis: function(string, n) {
   	if (string.length > n) {
       return string.slice(0, n) + "...";
@@ -49,6 +70,10 @@ module.exports = {
     } else {
       return array;
     }
+  },
+
+  objectsAreEqual: function(obj1, obj2) {
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
   },
 
   params: function() {
