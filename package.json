@@ -1,6 +1,6 @@
 {
   "name": "handy-tools",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A small library of handy tools",
   "engines": {
     "node": ">=4.0.0"
