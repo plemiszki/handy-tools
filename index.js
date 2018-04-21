@@ -33,6 +33,24 @@ module.exports = {
     }
   },
 
+  filterArrayOfDateStrings: function(array, property, obj) {
+    if (obj.startDate && obj.endDate) {
+      return array.filter(function(element) {
+        return (+moment(element[property]).format('x') >= obj.startDate) && (+moment(element[property]).format('x') <= obj.endDate);
+      });
+    } else if (obj.startDate) {
+      return array.filter(function(element) {
+        return +moment(element[property]).format('x') >= obj.startDate;
+      });
+    } else if (obj.endDate) {
+      return array.filter(function(element) {
+        return +moment(element[property]).format('x') <= obj.endDate;
+      });
+    } else {
+      return array;
+    }
+  },
+
   params: function() {
     var result = {};
     var urlParamString = window.location.search.substring(1);
