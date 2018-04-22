@@ -41,7 +41,7 @@ module.exports = {
       saveValue = event.target.value;
     }
 
-    // Common.removeFieldError(changeFieldArgs.errorsArray, key);
+    module.exports.removeFieldError(changeFieldArgs.allErrors, changeFieldArgs.errorsArray, key);
 
     this.setState({
       [saveKey]: saveValue,
@@ -146,6 +146,17 @@ module.exports = {
       return this;
     } else {
       return this + 's';
+    }
+  },
+
+  removeFieldError: function(errors, errorsArray, fieldName) {
+    if (errors[fieldName]) {
+      if (!errorsArray) {
+        console.log("no errors array!!!");
+      }
+      errors[fieldName].forEach(function(message) {
+        module.exports.removeFromArray(errorsArray, message);
+      });
     }
   },
 
