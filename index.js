@@ -181,7 +181,7 @@ module.exports = {
   },
 
   renderFieldError: function(stateErrors, fieldErrors) {
-    for (i = 0; i < fieldErrors.length; i++) {
+    for (var i = 0; i < fieldErrors.length; i++) {
       if (stateErrors.indexOf(fieldErrors[i]) > -1) {
         return(
           React.createElement("div", { className: "yes-field-error" }, fieldErrors[i])
