@@ -180,6 +180,19 @@ module.exports = {
     return condition ? " disabled" : "";
   },
 
+  renderFieldError: function(stateErrors, fieldErrors) {
+    for (i = 0; i < fieldErrors.length; i++) {
+      if (stateErrors.indexOf(fieldErrors[i]) > -1) {
+        return(
+          React.createElement("div", { className: "yes-field-error" }, fieldErrors[i])
+        );
+      }
+    }
+    return(
+      React.createElement("div", { className: "no-field-error" })
+    );
+  },
+
   renderGrayedOut: function(shouldIRender, marginTop, marginLeft, borderRadius) {
     var grayedOutStyle = {
       position: 'absolute',
