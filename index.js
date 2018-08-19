@@ -215,12 +215,6 @@ module.exports = {
   renderSpinner: function(shouldIRender, spinnerSize) {
     spinnerSize = spinnerSize || 90;
     var spinnerStyle = {
-      position: 'absolute',
-      backgroundImage: 'url(' + Images.spinner + ')',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      opacity: 0.75,
-      zIndex: 101,
       width: spinnerSize,
       height: spinnerSize,
       left: 'calc(50% - ' + (spinnerSize / 2) + 'px)',
@@ -228,7 +222,7 @@ module.exports = {
     };
     if (shouldIRender) {
       return(
-        React.createElement("div", {className: "spinner", style:  spinnerStyle })
+        React.createElement("div", { className: "spinner", style:  spinnerStyle })
       );
     }
   },
