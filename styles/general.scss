@@ -22,12 +22,6 @@
   }
 }
 
-.gray-outline-button {
-  @include button;
-  border: 1px solid #E4E9ED;
-  color: #5F5F5F;
-}
-
 .blue-button {
   @include button;
   background-color: #013ADF;
@@ -46,6 +40,17 @@
   &:hover {
     color: #E9563D;
     background-color: #FBDDD8;
+  }
+}
+
+.gray-outline-button {
+  @include button;
+  border: 1px solid #5F5F5F;
+  color: #5F5F5F;
+
+  &:hover {
+    border: 1px solid #333;
+    color: #333;
   }
 }
 
