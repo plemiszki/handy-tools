@@ -1,6 +1,6 @@
 @mixin button {
   display: inline-block;
-  font-family: 'TeachableSans-Regular';
+  font-family: 'TeachableSans-Medium';
   padding: 15px 40px;
   text-align: center;
   font-size: 12px;
@@ -20,6 +20,12 @@
   &.float-button {
     float: right;
   }
+}
+
+.gray-outline-button {
+  @include button;
+  border: 1px solid #E4E9ED;
+  color: #5F5F5F;
 }
 
 .blue-button {
