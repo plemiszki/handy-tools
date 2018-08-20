@@ -7,10 +7,10 @@
 }
 
 .spinner {
-  position: 'absolute';
-  background-image: image-url('ajax-loader.svg');
-  background-position: 'center';
-  background-repeat: 'no-repeat';
+  position: absolute;
+  background-image: image-url('handy-tools/images/ajax-loader.svg');
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.75;
   z-index: 101;
 }
