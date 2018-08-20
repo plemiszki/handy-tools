@@ -56,6 +56,17 @@ body.admin {
   input, textarea, .nice-select {
     width: 100%;
   }
+
+  .yes-field-error {
+    margin-top: 10px;
+    color: red;
+    height: 10px;
+    margin-bottom: 40px;
+  }
+
+  .no-field-error {
+    margin-bottom: 30px;
+  }
 }
 
 #admin-framework {
@@ -98,13 +109,43 @@ body.admin {
   }
 }
 
-.yes-field-error {
-  margin-top: 10px;
-  color: red;
-  height: 10px;
-  margin-bottom: 40px;
-}
+.admin-modal {
 
-.no-field-error {
-  margin-bottom: 30px;
+  .yes-field-error {
+    margin-top: 10px;
+    line-height: 16px;
+    color: red;
+    margin-bottom: 20px;
+  }
+
+  .no-field-error {
+    margin-bottom: 46px;
+  }
+
+  .confirm-delete {
+
+    h1 {
+      color: #2C2F33;
+      font-family: 'TeachableSans-SemiBold';
+      font-size: 20px;
+      line-height: 27px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      width: 124px;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 30px;
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    p {
+      font-family: 'TeachableSans-SemiBold';
+      font-size: 14px;
+      color: black;
+    }
+  }
 }
