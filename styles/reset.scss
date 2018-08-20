@@ -1,7 +1,25 @@
+*:focus {
+  outline: none;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 body {
   font-family: 'TeachableSans-Regular', sans-serif;
   font-size: 12px;
   letter-spacing: 1.08px;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+}
+
+div {
+  background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,21 +27,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a, a:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-p {
+hr {
   margin: 0;
 }
 
@@ -31,14 +35,29 @@ img {
   -webkit-user-drag: none;
 }
 
-button {
-  padding: 0;
-}
-
-*:focus {
-  outline: none;
-}
-
 label {
   font-weight: normal;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }
