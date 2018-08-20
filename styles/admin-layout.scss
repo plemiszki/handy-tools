@@ -81,9 +81,10 @@ body.admin {
       height: 100%;
       padding: 36px 32px;
 
-      input.sign-out-button {
+      .sidebar-button {
         border: 1px solid #E4E9ED;
         border-radius: 3px;
+        letter-spacing: inherit;
         color: #5F5F5F;
         padding: 13px;
         width: 100%;
@@ -106,11 +107,7 @@ body.admin {
     }
 
     #admin-right-column {
-      padding: 0;
-
-      #admin-right-column-content {
-        padding: 30px 40px 0 40px;
-      }
+      padding: 30px 40px 0 40px;
     }
   }
 }
