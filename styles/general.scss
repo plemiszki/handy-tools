@@ -1,6 +1,6 @@
 @mixin button {
   display: inline-block;
-  font-family: 'TeachableSans-Bold';
+  font-family: 'TeachableSans-Regular';
   padding: 15px 40px;
   text-align: center;
   font-size: 12px;
@@ -49,6 +49,15 @@
 
   &:hover {
     background-color: #FF6D2C;
+  }
+}
+
+.red-button {
+  @include button;
+  background-color: #FF0000;
+
+  &:hover {
+    background-color: #B40404;
   }
 }
 
