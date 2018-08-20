@@ -11,6 +11,14 @@ body {
   margin: 0;
 }
 
+.btn {
+  // I want .btn.disabled to work (not fire click handlers) but don't want the styles that come with .btn
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  white-space: normal;
+}
+
 button {
   padding: 0;
 }
