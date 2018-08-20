@@ -1,0 +1,50 @@
+table.admin-table {
+  width: 100%;
+
+  thead {
+    border-bottom: solid 1px #DADEE2;
+
+    th {
+      font-family: 'TeachableSans-SemiBold';
+      padding-bottom: 20px;
+      color: black;
+    }
+    th:first-of-type {
+      padding-left: 10px;
+    }
+  }
+
+  tbody {
+
+    td {
+      padding-top: 10px;
+      position: relative;
+      padding-bottom: 10px;
+      color: #96939B;
+    }
+
+    tr.bold td, td.bold {
+      font-family: 'TeachableSans-Medium';
+      color: black;
+    }
+
+    td.indent {
+      padding-left: 10px;
+    }
+
+    tr:first-child {
+      td {
+        padding-top: 10px;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  tr:not(:first-child) {
+    cursor: pointer;
+  }
+
+  tr:not(:first-child):hover {
+    background-color: #F5F5F5;
+  }
+}
