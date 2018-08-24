@@ -37,7 +37,8 @@ body.admin {
     margin-bottom: 15px;
   }
 
-  input, textarea {
+  input, textarea, .nice-select {
+    width: 100%;
     border: 1px solid #E4E9ED;
     border-radius: 3px;
     color: #5F5F5F;
@@ -53,8 +54,10 @@ body.admin {
     }
   }
 
-  input, textarea, .nice-select {
-    width: 100%;
+  .nice-select {
+    font-size: inherit;
+    line-height: inherit;
+    height: 45px;
   }
 
   .yes-field-error {
