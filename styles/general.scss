@@ -78,6 +78,11 @@
   }
 }
 
+.select-scroll-2 .nice-select ul {
+  height: 80px;
+  overflow-y: scroll;
+}
+
 .select-scroll-3 .nice-select ul {
   height: 120px;
   overflow-y: scroll;
