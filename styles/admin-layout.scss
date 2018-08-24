@@ -58,6 +58,14 @@ body.admin {
     font-size: inherit;
     line-height: inherit;
     height: 45px;
+
+    ul {
+      width: 100%;
+    }
+
+    .option.selected {
+      font-family: 'TeachableSans-Bold';
+    }
   }
 
   .yes-field-error {

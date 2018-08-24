@@ -31,6 +31,12 @@
   }
 }
 
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .delete-button {
   @include button;
   float: right;
@@ -70,6 +76,16 @@
   &:hover {
     background-color: #B40404;
   }
+}
+
+.select-scroll-3 .nice-select ul {
+  height: 120px;
+  overflow-y: scroll;
+}
+
+.select-scroll-6 .nice-select ul {
+  height: 240px;
+  overflow-y: scroll;
 }
 
 .spinner {
