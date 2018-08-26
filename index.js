@@ -56,6 +56,10 @@ module.exports = {
     });
   },
 
+  convertBooleanToTFString: function(boolean) {
+    return boolean ? 't' : 'f';
+  },
+
   deepCopy: function(obj) {
     if (typeof obj == 'object') {
       if (Array.isArray(obj)) {
@@ -226,6 +230,13 @@ module.exports = {
       );
     }
   },
+
+  setUpNiceSelect: function(obj) {
+    var $dropDowns = $(obj.selector);
+    if (!$dropDowns[0].nextSibling.classList.contains('nice-select')) {
+      $dropDowns.niceSelect().on('change', obj.func);
+    }
+  }
 
   stringifyDate: function(date) {
     return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear().toString().slice(-2);
