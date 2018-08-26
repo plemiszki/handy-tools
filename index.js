@@ -31,14 +31,16 @@ module.exports = {
     var saveKey;
     var saveValue;
 
+    var value = $(event.target).is('select') ? module.exports.convertTFStringsToBoolean(event.target.value) : event.target.value;
+
     if (entity) {
       var newEntity = this.state[entity];
-      newEntity[key] = event.target.value;
+      newEntity[key] = value;
       saveKey = entity;
       saveValue = newEntity;
     } else {
       saveKey = key;
-      saveValue = event.target.value;
+      saveValue = value;
     }
 
     module.exports.removeFieldError(changeFieldArgs.allErrors, changeFieldArgs.errorsArray, key);
@@ -58,6 +60,28 @@ module.exports = {
 
   convertBooleanToTFString: function(boolean) {
     return boolean ? 't' : 'f';
+  },
+
+  convertObjectKeysToUnderscore: function(object) {
+    var result = {};
+    Object.keys(object).forEach(function(key) {
+      result[module.exports.convertToUnderscore(key)] = object[key];
+    });
+    return result;
+  },
+
+  convertTFStringsToBoolean: function(string) {
+    if (string === "t") {
+      return true;
+    } else if (string === "f") {
+      return false;
+    } else {
+      return string;
+    }
+  },
+
+  convertToUnderscore: function(input) {
+    return input.replace(/([A-Z1-9])/g, function($1) { return "_" + $1.toLowerCase(); }).replace('__', '_');
   },
 
   deepCopy: function(obj) {
