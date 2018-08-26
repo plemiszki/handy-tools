@@ -45,6 +45,12 @@ module.exports = {
 
     module.exports.removeFieldError(changeFieldArgs.allErrors, changeFieldArgs.errorsArray, key);
 
+    if (changeFieldArgs.beforeSave) {
+      var beforeSaveResult = changeFieldArgs.beforeSave.call(this, saveKey, saveValue);
+      saveKey = beforeSaveResult.key;
+      saveValue = beforeSaveResult.value;
+    }
+
     this.setState({
       [saveKey]: saveValue,
       justSaved: false
