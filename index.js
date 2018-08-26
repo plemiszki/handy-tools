@@ -236,7 +236,7 @@ module.exports = {
     if (!$dropDowns[0].nextSibling.classList.contains('nice-select')) {
       $dropDowns.niceSelect().on('change', obj.func);
     }
-  }
+  },
 
   stringifyDate: function(date) {
     return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear().toString().slice(-2);
