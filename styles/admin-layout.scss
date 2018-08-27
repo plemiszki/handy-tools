@@ -125,6 +125,10 @@ body.admin {
 
 .admin-modal {
 
+  .white-box {
+    box-shadow: none;
+  }
+
   .yes-field-error {
     margin-top: 10px;
     height: 16px;
