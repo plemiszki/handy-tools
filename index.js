@@ -227,6 +227,19 @@ module.exports = {
     );
   },
 
+  renderDropdownFieldError: function(stateErrors, fieldErrors) {
+    for (var i = 0; i < fieldErrors.length; i++) {
+      if (stateErrors.indexOf(fieldErrors[i]) > -1) {
+        return(
+          React.createElement("div", { className: "yes-dropdown-field-error" }, fieldErrors[i])
+        );
+      }
+    }
+    return(
+      React.createElement("div", { className: "no-dropdown-field-error" })
+    );
+  },
+
   renderGrayedOut: function(shouldIRender, marginTop, marginLeft, borderRadius) {
     var grayedOutStyle = {
       position: 'absolute',
