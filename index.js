@@ -9,6 +9,10 @@ var React = require('react');
 
 module.exports = {
 
+  WEEKDAYS: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+
+  MONTHS: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+
   alphabetizeArrayOfObjects: function(array, property) {
     return array.sort(function(a, b) {
       if (a[property].toUpperCase() < b[property].toUpperCase()) {
