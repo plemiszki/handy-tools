@@ -287,7 +287,7 @@ module.exports = {
 
   setUpNiceSelect: function(obj) {
     var $dropDowns = $(obj.selector);
-    if (!$dropDowns[0].nextSibling.classList.contains('nice-select')) {
+    if ($dropDowns[0] && !$dropDowns[0].nextSibling.classList.contains('nice-select')) {
       $dropDowns.niceSelect().on('change', obj.func);
     }
   },
