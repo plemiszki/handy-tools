@@ -278,6 +278,13 @@ module.exports = {
     }
   },
 
+  resetNiceSelect: function(obj) {
+    var $dropDowns = $(obj.selector);
+    $dropDowns.niceSelect('destroy');
+    $dropDowns.unbind('change');
+    $dropDowns.niceSelect().on('change', obj.func);
+  },
+
   setUpNiceSelect: function(obj) {
     var $dropDowns = $(obj.selector);
     if (!$dropDowns[0].nextSibling.classList.contains('nice-select')) {
