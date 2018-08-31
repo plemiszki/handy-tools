@@ -159,7 +159,9 @@ body.admin {
   }
 
   .no-dropdown-field-error {
-    margin-bottom: 91px;
+    // I don't understand why the padding-bottom is necessary, but the margin-bottom won't push the next row down enough without it
+    padding-bottom: 10px;
+    margin-bottom: 81px;
   }
 
   .confirm-delete {
