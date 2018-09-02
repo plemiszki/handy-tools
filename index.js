@@ -202,6 +202,24 @@ module.exports = {
     }
   },
 
+  rearrangeFields: function(currentOrder, draggedIndex, dropZoneIndex) {
+    var result = {};
+    var draggedTaskId;
+    if (dropZoneIndex == -1) {
+      draggedTaskId = currentOrder[draggedIndex];
+      result[0] = draggedTaskId;
+    }
+    for (var i = 0; i < Object.keys(currentOrder).length; i++) {
+      if (i != draggedIndex) {
+        result[Object.keys(result).length] = currentOrder[i];
+      }
+      if (i == dropZoneIndex) {
+        result[Object.keys(result).length] = currentOrder[draggedIndex];
+      }
+    }
+    return result;
+  },
+
   removeFieldError: function(errors, errorsArray, fieldName) {
     if (errors[fieldName]) {
       if (!errorsArray) {
