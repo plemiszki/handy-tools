@@ -28,7 +28,7 @@ table.admin-table {
       color: black;
     }
 
-    td.indent {
+    td:first-of-type {
       padding-left: 10px;
     }
 
