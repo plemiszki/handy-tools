@@ -17,10 +17,18 @@ table.admin-table {
   tbody {
 
     td {
-      padding-top: 10px;
       position: relative;
-      padding-bottom: 10px;
       color: #96939B;
+
+      &:empty {
+        padding: 10px 0;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
     }
 
     tr.bold td, td.bold {
