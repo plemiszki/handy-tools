@@ -68,6 +68,18 @@ module.exports = {
     });
   },
 
+  changeState(property, value) {
+    this.setState({
+      [property]: value
+    });
+  },
+
+  changeStateToTarget(property, e) {
+    this.setState({
+      [property]: e.target.value
+    });
+  },
+
   convertBooleanToTFString: function(boolean) {
     return boolean ? 't' : 'f';
   },
@@ -148,6 +160,17 @@ module.exports = {
       });
     } else {
       return array;
+    }
+  },
+
+  filterSearchText(inputArray, searchText, property) {
+    if (searchText !== '') {
+      var re = new RegExp(searchText, "i");
+      return inputArray.filter(function(entity) {
+        return re.test(entity[property]);
+      });
+    } else {
+      return inputArray;
     }
   },
 
@@ -355,5 +378,10 @@ module.exports = {
         return 0;
       }
     });
+  },
+
+  sortClass(property) {
+    var state = this.state.searchProperty;
+    return state === property ? 'sort-header-active' : 'sort-header-inactive';
   }
 };
