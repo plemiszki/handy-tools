@@ -65,6 +65,9 @@ input.search-box {
   background-image: image-url('handy-tools/images/magnifying-glass.svg');
   background-repeat: no-repeat;
   background-position: 15px 15px;
+  border: 1px solid #E4E9ED;
+  color: #5F5F5F;
+  letter-spacing: 1.08px;
 
   &.margin {
     margin-right: 30px;
