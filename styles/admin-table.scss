@@ -56,3 +56,17 @@ table.admin-table {
     background-color: #F5F5F5;
   }
 }
+
+input.search-box {
+  float: right;
+  border-radius: 100px;
+  padding: 15px 15px 15px 50px;
+  width: 250px;
+  background-image: image-url('handy-tools/images/magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+
+  &.margin {
+    margin-right: 30px;
+  }
+}
