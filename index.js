@@ -80,6 +80,17 @@ module.exports = {
     });
   },
 
+  commonSort: function(entity) {
+    var propertyValue = entity[this.state.searchProperty];
+    if (typeof propertyValue === "string" || propertyValue instanceof String) {
+      return propertyValue.toLowerCase();
+    } else if (typeof propertyValue == "boolean") {
+      return propertyValue.toString().toLowerCase();
+    } else {
+      return propertyValue;
+    }
+  },
+
   convertBooleanToTFString: function(boolean) {
     return boolean ? 't' : 'f';
   },
