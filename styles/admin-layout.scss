@@ -10,7 +10,10 @@ body.admin {
 }
 
 .component {
-  margin-bottom: 62px;
+
+  &:not(.modal) {
+    margin-bottom: 62px;
+  }
 
   h1 {
     margin-top: 10px;
@@ -89,6 +92,10 @@ body.admin {
   .no-dropdown-field-error {
     margin-bottom: 81px;
   }
+}
+
+.modal .white-box {
+  box-shadow: 1px 2px 3px 0px #E6E9EC;
 }
 
 #admin-framework {
