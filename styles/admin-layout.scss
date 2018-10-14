@@ -118,13 +118,18 @@ body.admin {
         font-size: 13px;
         color: #B0B0B0;
 
-        &:not(:last-of-type) { padding-bottom: 30px; }
+        &:not(:last-of-type) { margin-bottom: 30px; }
 
         .highlight {
           color: black;
           cursor: default;
           font-family: 'TeachableSans-ExtraBold';
         }
+      }
+
+      hr {
+        margin-top: -10px;
+        margin-bottom: 20px;
       }
     }
 
