@@ -18,6 +18,14 @@
     min-width: 175px;
   }
 
+  &.small-width {
+    min-width: 120px;
+  }
+
+  &.small-padding {
+    padding: 5px 10px 5px 10px;
+  }
+
   &.float-button {
     float: right;
   }
@@ -30,6 +38,12 @@
   &:hover {
     background-color: #0431B4;
   }
+}
+
+.blue-outline-button {
+  @include button;
+  border: 1px solid #01647C;
+  color: #01647C;
 }
 
 .clearfix:after {
@@ -59,6 +73,14 @@
     border: 1px solid #333;
     color: #333;
   }
+}
+
+.m-bottom {
+  margin-bottom: 30px;
+}
+
+.m-top {
+  margin-top: 30px;
 }
 
 .orange-button {

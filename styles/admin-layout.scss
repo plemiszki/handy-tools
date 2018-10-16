@@ -37,6 +37,13 @@ body.admin {
     margin-bottom: 15px;
   }
 
+  hr.divider {
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: -32px;
+    width: calc(100% + 64px);
+  }
+
   input:not([type="submit"]), textarea, .nice-select {
     width: 100%;
     border: 1px solid #E4E9ED;
