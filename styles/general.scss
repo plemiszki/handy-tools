@@ -44,6 +44,11 @@
   @include button;
   border: 1px solid #01647C;
   color: #01647C;
+
+  &:hover {
+    border: 1px solid #01647C;
+    color: #01647C;
+  }
 }
 
 .clearfix:after {

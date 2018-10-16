@@ -1,6 +1,10 @@
 table.admin-table {
   width: 100%;
 
+  &.no-links tbody td {
+    padding: 10px 0;
+  }
+
   thead {
     border-bottom: solid 1px #DADEE2;
 
