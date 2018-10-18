@@ -45,6 +45,15 @@ table.admin-table {
         padding: 10px 0;
       }
 
+      &.x-column {
+        width: 50px;
+        cursor: pointer;
+        background-image: image-url('handy-tools/images/x.svg');
+        background-size: 25px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
+
       a {
         display: block;
         width: 100%;
