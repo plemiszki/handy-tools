@@ -80,6 +80,15 @@
   }
 }
 
+.green-button {
+  @include button;
+  background-color: #04B404;
+
+  &:hover {
+    background-color: #088A08;
+  }
+}
+
 .m-bottom {
   margin-bottom: 30px;
 }
