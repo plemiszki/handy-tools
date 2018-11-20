@@ -54,6 +54,15 @@ table.admin-table {
         background-repeat: no-repeat;
       }
 
+      &.play-column {
+        width: 50px;
+        cursor: pointer;
+        background-image: image-url('handy-tools/images/play-button.svg');
+        background-size: 25px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
+
       a {
         display: block;
         width: 100%;
