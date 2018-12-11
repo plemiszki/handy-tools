@@ -185,6 +185,24 @@ module.exports = {
     }
   },
 
+  modalSelectStyles: function() {
+    return {
+      overlay: {
+        background: 'rgba(0, 0, 0, 0.50)'
+      },
+      content: {
+        background: '#FFFFFF',
+        margin: 'auto',
+        maxWidth: 540,
+        height: '90%',
+        border: 'solid 1px #5F5F5F',
+        borderRadius: '6px',
+        textAlign: 'center',
+        color: '#5F5F5F'
+      }
+    };
+  },
+
   objectsAreEqual: function(obj1, obj2) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
   },
