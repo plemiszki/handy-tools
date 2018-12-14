@@ -22,6 +22,37 @@ body.admin {
   }
 }
 
+.message-box {
+  position: relative;
+  background: #FFFFFF;
+  padding: 18px 16px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 3px 0px #E6E9EC;
+  margin-bottom: 30px;
+
+  &.green {
+    background-color: #00C79F;
+    box-shadow: 1px 2px 3px 0px #A9A9A9;
+  }
+
+  &.red {
+    background-color: #FA5858;
+    box-shadow: 1px 2px 3px 0px #A9A9A9;
+  }
+
+  .message-close {
+    position: absolute;
+    right: 16px;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    background-image: image-url('handy-tools/images/x.svg');
+    background-size: 17px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+}
+
 .white-box {
   background: #FFFFFF;
   padding: 36px 32px;
