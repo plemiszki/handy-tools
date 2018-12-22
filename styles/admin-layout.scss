@@ -51,6 +51,14 @@ body.admin {
     background-position: 50%;
     background-repeat: no-repeat;
   }
+
+  p:first-of-type {
+    font-family: 'TeachableSans-SemiBold';
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
 }
 
 .white-box {
