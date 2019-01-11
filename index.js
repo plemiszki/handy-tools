@@ -262,11 +262,12 @@ module.exports = {
       result[0] = draggedTaskId;
     }
     for (var i = 0; i < Object.keys(currentOrder).length; i++) {
+      var currentValues = Object.values(currentOrder);
       if (i != draggedIndex) {
-        result[Object.keys(result).length] = currentOrder[i];
+        result[Object.keys(result).length] = currentValues[i];
       }
       if (i == dropZoneIndex) {
-        result[Object.keys(result).length] = currentOrder[draggedIndex];
+        result[Object.keys(result).length] = currentValues[draggedIndex];
       }
     }
     return result;
