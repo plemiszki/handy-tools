@@ -61,6 +61,41 @@ body.admin {
   }
 }
 
+.tabs-row {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 60px;
+  font-size: 14px;
+
+  .tab {
+    float: left;
+    background-color: white;
+    vertical-align: bottom;
+    padding: 20px 20px 15px 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    user-select: none;
+
+    &.error {
+      border-bottom: none;
+      padding: 19px 20px 15px 19px;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 5px;
+    }
+
+    &:not(.selected) {
+      margin-bottom: 2px;
+      padding-bottom: 13px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 .white-box {
   background: #FFFFFF;
   padding: 36px 32px;
