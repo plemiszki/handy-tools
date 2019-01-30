@@ -248,9 +248,9 @@ module.exports = {
 
   pluralize: function(string, n) {
     if (n === 1) {
-      return this;
+      return string;
     } else {
-      return this + 's';
+      return string + 's';
     }
   },
 
