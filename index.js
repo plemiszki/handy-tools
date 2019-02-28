@@ -256,13 +256,12 @@ module.exports = {
 
   rearrangeFields: function(currentOrder, draggedIndex, dropZoneIndex) {
     var result = {};
-    var draggedTaskId;
     if (dropZoneIndex == -1) {
-      draggedTaskId = currentOrder[draggedIndex];
-      result[0] = draggedTaskId;
+      result[0] = currentOrder[draggedIndex];
+      delete currentOrder[draggedIndex];
     }
+    var currentValues = Object.values(currentOrder);
     for (var i = 0; i < Object.keys(currentOrder).length; i++) {
-      var currentValues = Object.values(currentOrder);
       if (i != draggedIndex) {
         result[Object.keys(result).length] = currentValues[i];
       }
