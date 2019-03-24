@@ -113,17 +113,6 @@ module.exports = {
     }
   },
 
-  filterSearchText(inputArray, searchText, property) {
-    if (searchText !== '') {
-      var re = new RegExp(searchText, "i");
-      return inputArray.filter(function(entity) {
-        return re.test(entity[property]);
-      });
-    } else {
-      return inputArray;
-    }
-  },
-
   modalSelectStyles: function() {
     return {
       overlay: {
