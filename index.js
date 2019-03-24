@@ -1,7 +1,6 @@
 'use strict';
 
 var moment = require('moment');
-var React = require('react');
 
 /**
  * @return {object}
