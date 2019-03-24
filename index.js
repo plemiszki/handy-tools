@@ -29,57 +29,6 @@ module.exports = {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
 
-  changeField: function(changeFieldArgs, event) {
-    var key = event.target.dataset.field;
-    var entity = event.target.dataset.entity;
-    var saveKey;
-    var saveValue;
-
-    var value = $(event.target).is('select') ? module.exports.convertTFStringsToBoolean(event.target.value) : event.target.value;
-
-    if (entity) {
-      var newEntity = this.state[entity];
-      newEntity[key] = value;
-      saveKey = entity;
-      saveValue = newEntity;
-    } else {
-      saveKey = key;
-      saveValue = value;
-    }
-
-    module.exports.removeFieldError(changeFieldArgs.allErrors, changeFieldArgs.errorsArray, key);
-
-    if (changeFieldArgs.beforeSave) {
-      var beforeSaveResult = changeFieldArgs.beforeSave.call(this, saveKey, saveValue);
-      saveKey = beforeSaveResult.key;
-      saveValue = beforeSaveResult.value;
-    }
-
-    this.setState({
-      [saveKey]: saveValue,
-      justSaved: false
-    }, function() {
-      if (changeFieldArgs.changesFunction) {
-        var changesToSave = changeFieldArgs.changesFunction.call();
-        this.setState({
-          changesToSave: changesToSave
-        });
-      }
-    });
-  },
-
-  changeState(property, value) {
-    this.setState({
-      [property]: value
-    });
-  },
-
-  changeStateToTarget(property, e) {
-    this.setState({
-      [property]: e.target.value
-    });
-  },
-
   commonSort: function(entity) {
     var propertyValue = entity[this.state.searchProperty];
     if (typeof propertyValue === "string" || propertyValue instanceof String) {
@@ -144,16 +93,6 @@ module.exports = {
     } else {
       return string;
     }
-  },
-
-  errorClass: function(stateErrors, fieldErrors) {
-    var i;
-    for (i = 0; i < fieldErrors.length; i++) {
-      if (stateErrors.indexOf(fieldErrors[i]) > -1) {
-        return 'error';
-      }
-    }
-    return '';
   },
 
   filterArrayOfDateStrings: function(array, property, obj) {
@@ -272,17 +211,6 @@ module.exports = {
     return result;
   },
 
-  removeFieldError: function(errors, errorsArray, fieldName) {
-    if (errors[fieldName]) {
-      if (!errorsArray) {
-        console.log("no errors array!!!");
-      }
-      errors[fieldName].forEach(function(message) {
-        module.exports.removeFromArray(errorsArray, message);
-      });
-    }
-  },
-
   removeFinanceSymbols: function(string) {
     return string.replace('$', '').replace(',', '');
   },
@@ -293,74 +221,6 @@ module.exports = {
       array.splice(index, 1);
     }
     return array;
-  },
-
-  renderInactiveButtonClass: function(condition) {
-    return condition ? " inactive" : "";
-  },
-
-  renderDisabledButtonClass: function(condition) {
-    return condition ? " disabled" : "";
-  },
-
-  renderFieldError: function(stateErrors, fieldErrors) {
-    for (var i = 0; i < fieldErrors.length; i++) {
-      if (stateErrors.indexOf(fieldErrors[i]) > -1) {
-        return(
-          React.createElement("div", { className: "yes-field-error" }, fieldErrors[i])
-        );
-      }
-    }
-    return(
-      React.createElement("div", { className: "no-field-error" })
-    );
-  },
-
-  renderDropdownFieldError: function(stateErrors, fieldErrors) {
-    for (var i = 0; i < fieldErrors.length; i++) {
-      if (stateErrors.indexOf(fieldErrors[i]) > -1) {
-        return(
-          React.createElement("div", { className: "yes-dropdown-field-error" }, fieldErrors[i])
-        );
-      }
-    }
-    return(
-      React.createElement("div", { className: "no-dropdown-field-error" })
-    );
-  },
-
-  renderGrayedOut: function(shouldIRender, marginTop, marginLeft, borderRadius) {
-    var grayedOutStyle = {
-      position: 'absolute',
-      zIndex: 100,
-      backgroundColor: 'gray',
-      opacity: 0.1,
-      width: '100%',
-      height: '100%',
-      borderRadius: borderRadius || 0,
-      marginTop: marginTop || 0,
-      marginLeft: marginLeft || 0
-    };
-    if (shouldIRender) {
-      return(
-        React.createElement("div", {className: "grayed-out", style:  grayedOutStyle })
-      );
-    }
-  },
-
-  renderSpinner: function(shouldIRender, spinnerSize) {
-    spinnerSize = spinnerSize || 90;
-    var spinnerStyle = {
-      width: spinnerSize,
-      height: spinnerSize,
-      left: 'calc(50% - ' + (spinnerSize / 2) + 'px)',
-      top: 'calc(50% - ' + (spinnerSize / 2) + 'px)'
-    };
-    if (shouldIRender) {
-      return(
-        React.createElement("div", { className: "spinner", style:  spinnerStyle })
-      );
-    }
   },
 
   resetNiceSelect: function(obj) {
@@ -419,10 +279,5 @@ module.exports = {
         }
       }
     });
-  },
-
-  sortClass(property) {
-    var state = this.state.searchProperty;
-    return state === property ? 'sort-header-active' : 'sort-header-inactive';
   }
 };

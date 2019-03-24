@@ -1,92 +1,7 @@
-@mixin button {
-  display: inline-block;
-  font-family: 'TeachableSans-Medium';
-  padding: 15px 40px;
-  text-align: center;
-  font-size: 12px;
-  border-radius: 100px;
-  color: white;
-  letter-spacing: inherit;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-  }
-
-  &.standard-width {
-    min-width: 175px;
-  }
-
-  &.small-width {
-    min-width: 120px;
-  }
-
-  &.small-padding {
-    padding: 5px 10px 5px 10px;
-  }
-
-  &.float-button {
-    float: right;
-  }
-}
-
-.blue-button {
-  @include button;
-  background-color: #013ADF;
-
-  &:hover {
-    background-color: #0431B4;
-  }
-}
-
-.blue-outline-button {
-  @include button;
-  border: 1px solid #01647C;
-  color: #01647C;
-
-  &:hover {
-    border: 1px solid #01647C;
-    color: #01647C;
-  }
-}
-
 .clearfix:after {
   content: "";
   display: block;
   clear: both;
-}
-
-.delete-button {
-  @include button;
-  float: right;
-  color: #E9563D;
-  border: solid 0.5px #E9563D;
-
-  &:hover {
-    color: #E9563D;
-    background-color: #FBDDD8;
-  }
-}
-
-.gray-outline-button {
-  @include button;
-  border: 1px solid #5F5F5F;
-  color: #5F5F5F;
-
-  &:hover {
-    border: 1px solid #333;
-    color: #333;
-  }
-}
-
-.green-button {
-  @include button;
-  background-color: #04B404;
-
-  &:hover {
-    background-color: #088A08;
-  }
 }
 
 .m-bottom {
@@ -95,24 +10,6 @@
 
 .m-top {
   margin-top: 30px;
-}
-
-.orange-button {
-  @include button;
-  background-color: #FF7F45;
-
-  &:hover {
-    background-color: #FF6D2C;
-  }
-}
-
-.red-button {
-  @include button;
-  background-color: #FF0000;
-
-  &:hover {
-    background-color: #B40404;
-  }
 }
 
 .select-scroll-2 .nice-select ul {
@@ -128,15 +25,6 @@
 .select-scroll-6 .nice-select ul {
   height: 240px;
   overflow-y: scroll;
-}
-
-.spinner {
-  position: absolute;
-  background-image: image-url('handy-tools/images/ajax-loader.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.75;
-  z-index: 101;
 }
 
 .vertically-align-contents {
