@@ -5,13 +5,15 @@
   text-align: center;
   font-size: 12px;
   border-radius: 100px;
-  color: $highlight-color;
+  background-color: $highlight-color;
+  color: white;
   letter-spacing: inherit;
 
   &:hover {
     cursor: pointer;
     text-decoration: none;
-    color: darken($highlight-color, 10%);
+    background-color: darken($highlight-color, 10%);
+    color: white;
   }
 
   &.standard-width {
