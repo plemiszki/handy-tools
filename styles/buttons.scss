@@ -31,6 +31,10 @@
   }
 }
 
+.btn {
+  @include button
+}
+
 .blue-button {
   @include button;
   background-color: #013ADF;
