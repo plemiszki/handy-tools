@@ -16,6 +16,11 @@
     color: white;
   }
 
+  &:focus {
+    color: white;
+    outline: none;
+  }
+
   &.standard-width {
     min-width: 175px;
   }
@@ -61,6 +66,7 @@
   @include button;
   float: right;
   color: #E9563D;
+  background-color: white;
   border: solid 0.5px #E9563D;
 
   &:hover {
