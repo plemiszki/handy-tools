@@ -1,6 +1,7 @@
 'use strict';
 
 var moment = require('moment');
+var ChangeCase = require('change-case');
 
 /**
  * @return {object}
@@ -46,7 +47,7 @@ module.exports = {
   convertObjectKeysToUnderscore: function(object) {
     var result = {};
     Object.keys(object).forEach(function(key) {
-      result[module.exports.convertToUnderscore(key)] = object[key];
+      result[ChangeCase.snakeCase(key)] = object[key];
     });
     return result;
   },
