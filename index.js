@@ -174,6 +174,14 @@ module.exports = {
     return result;
   },
 
+  pluckFromObjectsArray: function(args) {
+    for (let i = 0; i < args.array.length; i++) {
+      if (args.array[i][args.property] === args.value) {
+        return args.array[i];
+      }
+    }
+  },
+
   pluralize: function(string, n) {
     if (n === 1) {
       return string;
