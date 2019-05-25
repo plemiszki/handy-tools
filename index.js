@@ -113,6 +113,15 @@ module.exports = {
     }
   },
 
+  findObjectInArrayById: function(array, id) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i].id == id) {
+        return array[i];
+      }
+    }
+    return null;
+  },
+
   modalSelectStyles: function() {
     return {
       overlay: {
