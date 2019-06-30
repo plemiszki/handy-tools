@@ -243,6 +243,15 @@ module.exports = {
     }
   },
 
+  shuffleArray: function(input) {
+    let array = input.slice(0);
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  },
+
   stringifyDate: function(date) {
     return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear().toString().slice(-2);
   },
