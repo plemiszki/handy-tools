@@ -2,6 +2,7 @@
 
 var moment = require('moment');
 var ChangeCase = require('change-case');
+var $ = require('jquery');
 
 /**
  * @return {object}
