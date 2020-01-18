@@ -2,7 +2,6 @@
 
 var moment = require('moment');
 var ChangeCase = require('change-case');
-var $ = require('jquery');
 
 /**
  * @return {object}
@@ -231,6 +230,7 @@ module.exports = {
   },
 
   resetNiceSelect: function(obj) {
+    // assumes jQuery (and nice select) have been loaded via script tags
     var $dropDowns = $(obj.selector);
     $dropDowns.niceSelect('destroy');
     $dropDowns.unbind('change');
@@ -238,6 +238,7 @@ module.exports = {
   },
 
   setUpNiceSelect: function(obj) {
+    // assumes jQuery (and nice select) have been loaded via script tags
     var $dropDowns = $(obj.selector);
     if ($dropDowns[0] && (!$dropDowns[0].nextSibling || !$dropDowns[0].nextSibling.classList.contains('nice-select'))) {
       $dropDowns.niceSelect().on('change', obj.func);
