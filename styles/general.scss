@@ -13,17 +13,17 @@
 }
 
 .select-scroll-2 .nice-select ul {
-  height: 80px;
+  max-height: 80px;
   overflow-y: scroll;
 }
 
 .select-scroll-3 .nice-select ul {
-  height: 120px;
+  max-height: 120px;
   overflow-y: scroll;
 }
 
 .select-scroll-6 .nice-select ul {
-  height: 240px;
+  max-height: 240px;
   overflow-y: scroll;
 }
 
