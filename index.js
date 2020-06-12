@@ -30,13 +30,10 @@ module.exports = {
   },
 
   commonSort: function(property, entity) {
-    console.log('entity: ', entity);
-    console.log('property: ', property);
-    if (!property) {
-      throw `HandyTools.commonSort is missing property argument`;
+    if (!property || !entity) {
+      throw `HandyTools.commonSort is missing proper arguments`;
     }
     var propertyValue = entity[property];
-    console.log(propertyValue);
     if (typeof propertyValue === "string" || propertyValue instanceof String) {
       return propertyValue.toLowerCase();
     } else if (typeof propertyValue == "boolean") {
