@@ -29,7 +29,7 @@ module.exports = {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
 
-  commonSort: function(entity, property) {
+  commonSort: function(property, entity) {
     console.log('entity: ', entity);
     console.log('property: ', property);
     if (!property) {
