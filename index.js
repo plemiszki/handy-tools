@@ -29,8 +29,11 @@ module.exports = {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
 
-  commonSort: function(entity) {
-    var propertyValue = entity[this.state.searchProperty];
+  commonSort: function(entity, property) {
+    if (!property) {
+      throw `HandyTools.commonSort is missing property argument`;
+    }
+    var propertyValue = entity[property];
     if (typeof propertyValue === "string" || propertyValue instanceof String) {
       return propertyValue.toLowerCase();
     } else if (typeof propertyValue == "boolean") {
