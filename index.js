@@ -202,7 +202,10 @@ module.exports = {
     }
   },
 
-  rearrangeFields: function(currentOrder, draggedIndex, dropZoneIndex) {
+  rearrangeFields: function(args) {
+    var currentOrder = args.currentOrder;
+    var draggedIndex = args.draggedIndex;
+    var dropZoneIndex = args.dropZoneIndex;
     var result = {};
     if (dropZoneIndex == -1) {
       result[0] = currentOrder[draggedIndex];
@@ -210,7 +213,7 @@ module.exports = {
     }
     var currentValues = Object.values(currentOrder);
     for (var i = 0; i < Object.keys(currentOrder).length; i++) {
-      if (i != draggedIndex) {
+      if (dropZoneIndex == -1 || i != draggedIndex) {
         result[Object.keys(result).length] = currentValues[i];
       }
       if (i == dropZoneIndex) {
