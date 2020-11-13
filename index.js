@@ -13,6 +13,12 @@ module.exports = {
 
   MONTHS: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 
+  addDaysToDate: function(date, daysToAdd) {
+    const millisecondsToAdd = daysToAdd * 24 * 60 * 60 * 1000;
+    const millisecondsSinceEpoch = date.getTime() + millisecondsToAdd;
+    return new Date(millisecondsSinceEpoch);
+  },
+
   alphabetizeArrayOfObjects: function(array, property) {
     return array.sort(function(a, b) {
       if (a[property].toUpperCase() < b[property].toUpperCase()) {
@@ -69,6 +75,10 @@ module.exports = {
     return input.replace(/([A-Z1-9])/g, function($1) { return "_" + $1.toLowerCase(); }).replace('__', '_');
   },
 
+  daysDifference: function(date1, date2) {
+    return ((date1 - date2) / 1000 / 60 / 60 / 24);
+  },
+
   deepCopy: function(obj) {
     if (typeof obj == 'object') {
       if (Array.isArray(obj)) {
@@ -123,6 +133,14 @@ module.exports = {
       }
     }
     return null;
+  },
+
+  lpad: function(args) {
+    let result = args.string;
+    while (result.length < args.length) {
+      result = args.padString + result;
+    }
+    return result;
   },
 
   modalSelectStyles: function() {
@@ -265,7 +283,10 @@ module.exports = {
   },
 
   stringifyDateWithHyphens: function(date) {
-    return date.getFullYear().toString() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    const year = date.getFullYear().toString();
+    const month = this.lpad({ string: (date.getMonth() + 1).toString(), padString: '0', length: 2 });
+    const day = this.lpad({ string: date.getDate().toString(), padString: '0', length: 2 });
+    return year + '-' + month + '-' + day;
   },
 
   sortArrayOfDateStrings: function(array, property) {
@@ -302,6 +323,10 @@ module.exports = {
         }
       }
     });
+  },
+
+  stripTimeFromDate: function(date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
   },
 
   todayDMY: function() {
