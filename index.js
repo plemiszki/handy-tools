@@ -54,9 +54,13 @@ module.exports = {
   },
 
   convertObjectKeysToUnderscore: function(object) {
-    var result = {};
-    Object.keys(object).forEach(function(key) {
-      result[ChangeCase.snakeCase(key)] = object[key];
+    let result = {};
+    Object.keys(object).forEach((key) => {
+      let value = object[key];
+      if (typeof value === 'object') {
+        value = this.convertObjectKeysToUnderscore(value);
+      }
+      result[ChangeCase.snakeCase(key)] = value;
     });
     return result;
   },
