@@ -21,9 +21,9 @@ module.exports = {
 
   alphabetizeArrayOfObjects: function(array, property) {
     return array.sort(function(a, b) {
-      if (a[property].toUpperCase() < b[property].toUpperCase()) {
+      if (a[property].toString().toUpperCase() < b[property].toString().toUpperCase()) {
         return -1;
-      } else if (a[property].toUpperCase() > b[property].toUpperCase()) {
+      } else if (a[property].toString().toUpperCase() > b[property].toString().toUpperCase()) {
         return 1;
       } else {
         return 0;
