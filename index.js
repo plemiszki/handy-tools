@@ -66,7 +66,7 @@ module.exports = {
     let result = {};
     Object.keys(object).forEach((key) => {
       let value = object[key];
-      if (typeof value === 'object') {
+      if (typeof value === 'object' && Array.isArray(value) === false) {
         value = this.convertObjectKeysToUnderscore(value);
       }
       result[ChangeCase.snakeCase(key)] = value;
