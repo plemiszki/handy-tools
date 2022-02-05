@@ -297,7 +297,7 @@ module.exports = {
 
   stringifyFullDate: function(date) {
     return `${MONTHS[date.getMonth()]} ${this.ordinatize(date.getDate())}, ${date.getFullYear()}`;
-  }
+  },
 
   stringifyDateWithHyphens: function(date) {
     const year = date.getFullYear().toString();
