@@ -295,6 +295,10 @@ module.exports = {
     return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear().toString().slice(-2);
   },
 
+  stringifyFullDate: function(date) {
+    return `${MONTHS[date.getMonth()]} ${this.ordinatize(date.getDate())}, ${date.getFullYear()}`;
+  }
+
   stringifyDateWithHyphens: function(date) {
     const year = date.getFullYear().toString();
     const month = this.lpad({ string: (date.getMonth() + 1).toString(), padString: '0', length: 2 });
